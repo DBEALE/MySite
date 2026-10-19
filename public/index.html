@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MySite</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+  <header><a class="brand" href="#home" aria-label="MySite home">MySite<span class="dot"></span></a><nav aria-label="Main navigation"><a href="#build">Build</a><a href="#changes">Changes</a></nav></header>
+  <main>
+    <section id="home" aria-label="Website"><div id="page"></div></section>
+    <section id="build" hidden>
+      <p class="eyebrow">OWNER WORKSPACE</p><h1>What would you like to build?</h1><p class="muted">Describe a change to your page. Each update is checked before it goes live.</p>
+      <form id="login-form" hidden><label for="password">Owner password</label><input id="password" type="password" autocomplete="current-password" required minlength="20"><button>Sign in</button></form>
+      <form id="build-form" hidden><label for="prompt">Your change</label><textarea id="prompt" rows="6" maxlength="4000" placeholder="Add a welcome heading and three cards about my work…" required></textarea><p class="hint">Change text, sections, card layouts, theme, and accent colour. New app features require a reviewed code change.</p><div class="actions"><button id="submit-build">Build this change <span aria-hidden="true">↗</span></button><button id="logout" class="secondary" type="button">Sign out</button></div></form>
+      <p id="build-message" role="status" aria-live="polite"></p><div id="build-list"></div>
+    </section>
+    <section id="changes" hidden><p class="eyebrow">RELEASE HISTORY</p><h1>Changes</h1><p class="muted">Updates included in the version you’re viewing.</p><div id="change-list"></div><p id="revision" class="hint"></p></section>
+    <p id="error" role="alert"></p>
+  </main>
+</body></html>

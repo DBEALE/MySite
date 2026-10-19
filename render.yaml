@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: mysite
+    runtime: node
+    repo: https://github.com/DBEALE/MySite
+    branch: main
+    numInstances: 1
+    buildCommand: npm test && npm run check
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_VERSION
+        value: '22'
+      - key: NODE_ENV
+        value: production
+      - key: APP_ORIGIN
+        sync: false
+      - key: OWNER_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: BUILD_ENABLED
+        value: 'false'
